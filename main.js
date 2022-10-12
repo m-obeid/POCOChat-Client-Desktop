@@ -12,7 +12,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     },
-    titleBarStyle: 'hidden'
+    titleBarStyle: (process.platform === 'darwin' ? 'hidden': 'default')
   })
 
   ipcMain.on("anonfiles-url-autosubmit", (evt, url) => {
