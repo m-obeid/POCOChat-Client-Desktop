@@ -1,0 +1,23 @@
+{
+  "name": "pocochat-electron",
+  "productName": "POCOChat",
+  "version": "1.0.0",
+  "description": "Public chatroom for almost everything",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=icons/icon.icns --prune=true --out=dist",
+    "package-silicon": "electron-packager . --overwrite --platform=darwin --arch=arm64 --icon=icons/icon.icns --prune=true --out=dist",
+    "package-win": "electron-packager . pocochat-electron --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=dist --version-string.CompanyName=POCOGuy --version-string.FileDescription=\"Public chatroom for almost everything\" --version-string.ProductName=\"POCOChat\"",
+    "package-linux": "electron-packager . pocochat-electron --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=dist"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "POCOGuy",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^21.1.0",
+    "electron-packager": "^16.0.0"
+  }
+}
