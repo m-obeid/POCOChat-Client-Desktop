@@ -14,7 +14,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     },
-    titleBarStyle: (process.platform === 'darwin' ? 'hidden': 'default')
+    titleBarStyle: 'hidden'
   })
   if (process.platform === 'darwin') {
     globalShortcut.register('Command+Q', () => {
