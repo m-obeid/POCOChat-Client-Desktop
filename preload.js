@@ -1,9 +1,9 @@
 // Electron preload for stuff
-const {contextBridge, ipcRenderer, ipcMain } = require('electron')
+const {contextBridge, ipcRenderer } = require('electron')
 
 window.onload = () => {
     window.document.querySelector(".upper-navbar").setAttribute("style", "-webkit-app-region: drag"); // enable dragging
-     window.document.querySelector(".window-controls").classList.remove("d-none");
+    if (process.platform != 'darwin') window.document.querySelector(".window-controls").classList.remove("d-none");
 }
 
 contextBridge.exposeInMainWorld(
